@@ -1069,7 +1069,7 @@ public final class Colony implements Base, IMappedObject, Serializable {
         }
     }
 
-    private boolean governor = false;
+    private boolean governor = !"false".equalsIgnoreCase(System.getProperty("defaultgovernor", "true"));
 
     public boolean isGovernor() {
         return governor;
