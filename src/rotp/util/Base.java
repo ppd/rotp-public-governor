@@ -50,6 +50,7 @@ import java.util.Random;
 import java.util.Set;
 import java.util.jar.JarFile;
 import java.util.zip.ZipEntry;
+import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.SwingUtilities;
@@ -589,8 +590,15 @@ public interface Base {
                 err("Base.icon() -- Resource not found:", n);
             return null;
         }
-        else 
-            return new ImageIcon(resource);
+        else {
+            try {
+                BufferedImage img = ImageIO.read(resource);
+                return new ImageIcon(img);
+            } catch (IOException e) {
+                err("Base.icon() -- error loading resource: ", n+" : ", e.getMessage());
+                return null;
+            }
+        }
     }
     public default File file(String n) {
         return new File(Rotp.jarPath(), n);
