@@ -190,12 +190,16 @@ public enum SoundManager implements Base {
         public SoundClip play(float gain) {
             if (filename.endsWith("wav"))
                 return WavClip.play(filename, gain);
+            else if (filename.endsWith("ogg"))
+                return OggClip.play(filename, gain);
             else
                 return null;
         }
         public SoundClip playContinuously(float gain) {
             if (filename.endsWith("wav"))
                 return WavClip.playContinuously(filename, gain, style);
+            else if (filename.endsWith("ogg"))
+                return OggClip.playContinuously(filename, gain, style);
             else
                 return null;
         }
