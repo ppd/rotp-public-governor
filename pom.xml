@@ -23,6 +23,16 @@
             <artifactId>webp-imageio</artifactId>
             <version>0.1.1</version>
         </dependency>
+        <dependency>
+            <groupId>com.googlecode.soundlibs</groupId>
+            <artifactId>tritonus-share</artifactId>
+            <version>0.3.7-2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.googlecode.soundlibs</groupId>
+            <artifactId>vorbisspi</artifactId>
+            <version>1.0.3-1</version>
+        </dependency>
     </dependencies>
     <build>
         <sourceDirectory>src</sourceDirectory>
@@ -34,6 +44,7 @@
                     <exclude>**/*.png</exclude>
                     <exclude>**/*.jpg</exclude>
                     <exclude>**/*.bak</exclude>
+                    <exclude>**/*.wav</exclude>
                     <exclude>**/assembly.xml</exclude>
                 </excludes>
             </resource>
