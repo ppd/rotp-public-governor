@@ -51,6 +51,7 @@ public class Rotp {
     public static boolean reloadRecentSave = false;
     
     public static void main(String[] args) {
+        RotPUI.instance();
         frame = new JFrame("Remnants of the Precursors");
         if (args.length == 0) {
             if (restartWithMoreMemory(frame, false))
